@@ -1,0 +1,47 @@
+{
+  "name": "vscode-env-formatter",
+  "displayName": "vscode-env-formatter",
+  "description": "it formats .env",
+  "version": "0.0.1",
+  "publisher": "dennypenta",
+  "repository": "https://github.com/dennypenta/vscode-env-formatter",
+  "engines": {
+    "vscode": "^1.6.0"
+  },
+  "categories": [
+    "Formatter"
+  ],
+  "activationEvents": [
+    "onLanguage:env"
+  ],
+  "main": "./src/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "env",
+        "aliases": [
+          "Env"
+        ],
+        "extensions": [
+          "env"
+        ]
+      }
+    ],
+    "commands": [
+      {
+        "command": "extension.format-env",
+        "title": "One-line Format Env File"
+      }
+    ]
+  },
+  "scripts": {
+    "postinstall": "node ./node_modules/vscode/bin/install"
+  },
+  "devDependencies": {
+    "@types/node": "*",
+    "vscode": "1.0.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  }
+}
